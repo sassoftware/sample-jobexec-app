@@ -22,7 +22,7 @@ What if you automate it with APIs or jobs? This repository contains code and a v
     3. Open the file and paste the contents of jobexec.sas inside it and save. <br/>
     4. Right click the Job Execution file and go to properties -> parameters -> fill out as you see below. <br/>
         ![Parameters](img/parameters.png)
-        *Note:* update the _CASHOST_ parameter default value with your SAS server. 
+        **Note:** update the _CASHOST_ parameter default value with your SAS server. 
     5. Right click the Job Execution file, go to Edit and select New HTML form. <br/>
     6. Inside the new tab that will popup, paste the contents of the index.html file and save it. <br/>
         1. Do not forget to change the path to match your job execution file: <br/>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- 
+    Parameters:
+        1) _action -> default: form
+        2) p_loan = 5000;
+        3) p_mortdue = 195;
+        4) p_value = 163;
+        5) p_yoj = 10;
+        6) p_reason = 'HomeImp';
+        7) p_job = 'Office';
+ -->
+
+<head>
+    <title>Scoring - Loan Application</title>
+    <style>
+        body {
+            margin: 0!important;
+            background-color: #f2f2f2
+        }
+        
+        h1,
+        i {
+            text-align: center
+        }
+        
+        input[type=number],
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #0378cd;
+            border-radius: 4px;
+            box-sizing: border-box
+        }
+        
+        input[type=submit] {
+            width: 100%;
+            background-color: #0378cd;
+            color: #fff;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer
+        }
+        
+        input[type=submit]:hover {
+            background-color: #0378cd
+        }
+        
+        div {
+            border-radius: 5px;
+            padding: 20px;
+            font-family: AvenirNext, Helvetica, Arial, sans-serif
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the Loan Application </h1>
+    <i>Please, specify some required parameters for execution: </i>
+
+    <div class="container">
+        <form action="/SASJobExecution/" target="_self">
+
+            <!-- Change the path to match your job execution file. -->
+
+            <input type="hidden" name="_program" value="/Users/ludepa/blogs/JobExec/scoringJob">
+            <input type="hidden" name="_action" value="wait,execute">
+
+            <!-- Change to match the name / type of your parameters-->
+
+            <label for="p_loan">Requested loan amount</label>
+            <input type="number" id="p_loan" name="p_loan" placeholder="i.e: 2000" required>
+
+            <label for="p_mortdue">Amount due on existing mortgage</label>
+            <input type="number" id="p_mortdue" name="p_mortdue" placeholder="i.e: 100000" required>
+
+            <label for="p_value">Value of current property</label>
+            <input type="number" id="p_value" name="p_value" placeholder="i.e: 150000" required>
+
+            <label for="p_yoj">Years at present job</label>
+            <input type="number" id="p_yoj" name="p_yoj" placeholder="i.e: 4" required>
+
+            <label for="p_reason">Reason</label>
+            <select name="p_reason" required size="5">
+				<option value='HomeImp'>Home Improvement</option>
+				<option value='DebtCon'>Debt Consolidation</option>
+			</select>
+
+            <label for="p_job">Occupational category</label>
+            <select name="p_job" required size="5">
+				<option value='Mgr'>Manager</option>
+				<option value='Office'>Office</option>
+				<option value='ProfExe'>Executive</option>
+				<option value='Sales'>Sales</option>
+				<option value='Self'>Self Employed</option>
+				<option value='Other'>Other</option>
+			</select>
+
+            <input type="submit" value="Run code">
+        </form>
+    </div>
+</body>
+
+</html>
